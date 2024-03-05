@@ -12,7 +12,7 @@ export default function createIteratorObject(report) {
         const currentDepartment = departments[deptIndex];
         if (empIndex >= currentDepartment.length) {
             deptIndex++;
-          empIndex = 0;
+            empIndex = 0;
           return this.next();
         }
   
