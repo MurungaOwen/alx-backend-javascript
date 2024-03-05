@@ -12,5 +12,4 @@ function getCurrentYear() {
 
     return budget;
   }
-
   
