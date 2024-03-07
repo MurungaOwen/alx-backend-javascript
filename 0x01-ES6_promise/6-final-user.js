@@ -14,5 +14,4 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
     } catch (error) {
         return error;
     }
-    
 }
