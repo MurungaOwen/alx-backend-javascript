@@ -1,5 +1,5 @@
 export default function getResponseFromAPI() {
-    return new Promise((resolve, reject) => {
-      resolve("fake out");
+    return new Promise((resolve) => {
+      resolve('fake out');
     });
   }
