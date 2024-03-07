@@ -1,15 +1,14 @@
 export default function getFullResponseFromAPI(success) {
-    const prom = new Promise((res,rej) => {
-        if (success){
-            let oject={
+    const prom = new Promise((res, rej) => {
+        if (success) {
+            const oject = {
                 status: 200,
-                body: 'Success'
-            }
+                body: 'Success',
+            };
             res(oject);
-        }
-        else{
+        }else {
             rej("The fake API is not working currently");
-        }      
+        }
     });
-    return prom
+    return prom;
 }
