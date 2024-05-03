@@ -8,8 +8,7 @@ app.listen(app.get('port'), () => {
 });
 
 app.get('/', (req, res) => {
-    res.statusCode = 200;
-    res.send('Hello Holberton School!');
+    res.status(200).send('Hello Holberton School!');
 })
 
 module.exports = app

@@ -13,6 +13,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', (req, res) => {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
     res.write('This is the list of our students\n');
     try {
         countStudents(process.argv[2]).then((data)=>{

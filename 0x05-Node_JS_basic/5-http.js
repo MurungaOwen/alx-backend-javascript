@@ -6,12 +6,12 @@ const port = 1245;
 
 
 function Home(req, res) {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
+    res.writeHead(200, {'Content-Type': 'text/plain'});
     res.end('Hello Holberton School!');
 }
 
 function Students(req, res) {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
     res.write('This is the list of our students\n');
     try {
         const data = countStudents(process.argv[2], res).then((data)=>{
