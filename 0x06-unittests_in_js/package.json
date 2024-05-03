@@ -4,12 +4,13 @@
   "description": "ALX backend JS unittests course",
   "main": "",
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "chai": "^5.1.0",
+    "chai": "^4.3.6",
+    "express": "^4.19.2",
     "mocha": "^10.4.0",
     "sinon": "^17.0.1"
   }

@@ -1,8 +1,4 @@
 ### tests in js
-#### Test cases
-Create a file 0-calcul.test.js that contains test cases of this function
-You can assume a and b are always number
-Tests should be around the “rounded” part
-Tips:
-For the sake of the example, this test suite is slightly extreme and probably not needed
-However, remember that your tests should not only verify what a function is supposed to do, but also the edge cases
+#### The excercise takes you through doing test cases in js using ```mocha```, ```chai``` and ```assert```
+you also get a chance to interact with express and the requests module while dealing with async functions
+in ```9-api``` you handle regexes and in ```10-api``` we get to interact with handling data from client
