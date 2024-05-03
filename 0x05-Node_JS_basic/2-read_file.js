@@ -20,9 +20,23 @@ function countStudents(path) {
                 return;
             }
         });
-        process.stdout.write(`Number of students: ${lines.length - 1}\n`);
-        process.stdout.write(`Number of students in CS: ${csTotal}. List: ${csStud}\n`);
-        process.stdout.write(`Number of students in SWE: ${swTotal}. List: ${swStud}`);
+        const csArr = [];
+        csStud.forEach((val)=>{
+            csArr.push(" "+val);
+        });
+
+        const swArr = [];
+        swStud.forEach((val)=>{
+            swArr.push(" "+val);
+        });
+
+        const msg1 = `Number of students: ${lines.length - 1}\n`;
+        const msg2  = `Number of students in CS: ${csTotal}. List: ${csArr}\n`;
+        const msg3 = `Number of students in SWE: ${swTotal}. List: ${swArr}`;
+        const final = `${msg1}${msg2}${msg3}`;
+
+        console.log(final);
+
     } catch (error) {
         throw new Error("Cannot load the database");
     } 

@@ -15,11 +15,11 @@ app.get('/', (req, res) => {
 app.get('/students', (req, res) => {
     res.write('This is the list of our students\n');
     try {
-        const data = countStudents(process.argv[2], res).then((data)=>{
-        res.end(data);
-    }).catch((err)=>{
-        res.end(err);
-    });
+        countStudents(process.argv[2]).then((data)=>{
+            res.end(data);
+        }).catch((err)=>{
+            res.end(err);
+        });
     } catch (err) {
         res.end(err.message);
     }

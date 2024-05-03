@@ -9,6 +9,6 @@ function userData() {
 
   process.on('exit', ()=>{
     process.stdout.write('This important software is now closing\n');
-  })
+  });
 }
-userData()
+userData();

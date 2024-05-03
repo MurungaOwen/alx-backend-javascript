@@ -12,14 +12,44 @@ function readDatabase(path) {
                 }
                 const lines = data.trim().split('\n');
                 const results = lines.map(line=>line.split(','))
-                const names =[]
+                let csTotal = 0
+                let csStud = []
+                let swTotal = 0
+                let swStud = []
                 results.forEach((val)=>{
-                    if (!val[0].startsWith('firstname')) {
-                        names.push(val[0]);
+                    if(val[3].startsWith('CS')) {
+                        csTotal += 1;
+                        csStud.push(val[0]);
                     }
-                    return;
+                    else if(val[3].startsWith('SWE')) {
+                        swTotal += 1;
+                        swStud.push(val[0])
+                    }
+                    else{
+                        return;
+                    }
                 });
-                resolve(names);
+                const csArr = [];
+                csStud.forEach((val)=>{
+                    csArr.push(" "+val);
+                });
+
+                const swArr = [];
+                swStud.forEach((val)=>{
+                    swArr.push(" "+val);
+                });
+
+                // const msg1 = `Number of students: ${lines.length - 1}\n`;
+                // const msg2  = `Number of students in CS: ${csTotal}. List: ${csArr}\n`;
+                // const msg3 = `Number of students in SWE: ${swTotal}. List: ${swArr}`;
+                // const final = `${msg1}${msg2}${msg3}`;
+                // console.log(final);
+                // resolve(final);
+                const myObject ={
+                    "CS": csArr,
+                    "SW": swArr
+                }
+                resolve(myObject);
             });
         });
     }); 
