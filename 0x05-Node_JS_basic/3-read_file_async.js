@@ -39,7 +39,7 @@ function countStudents(path) {
           const msg2 = `Number of students in CS: ${csTotal}. List: ${csArr}\n`;
           const msg3 = `Number of students in SWE: ${swTotal}. List: ${swArr}`;
           const final = `${msg1}${msg2}${msg3}`;
-          console.log(final);
+          process.stdout.write(`${final}\n`);
           resolve(final);
         }
       });
