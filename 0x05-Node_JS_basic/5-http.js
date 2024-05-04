@@ -1,4 +1,4 @@
-const { createServer } = require('node:http');
+const http = require('http');
 const countStudents = require('./3-read_file_async');
 
 const hostname = '127.0.0.1';
@@ -22,7 +22,7 @@ function Students(req, res) {
     res.end(err.message);
   }
 }
-const app = createServer((req, res) => {
+const app = http.createServer((req, res) => {
   const { pathname } = new URL(req.url, `http://${req.headers.host}`);
   if (pathname === '/') {
     Home(req, res);
