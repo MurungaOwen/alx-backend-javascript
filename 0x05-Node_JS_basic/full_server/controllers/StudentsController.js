@@ -27,11 +27,12 @@ class StudentsController {
       if (major.toUpperCase() !== 'CS' && major.toUpperCase() !== 'SWE') {
         res.status(500).send('Major parameter must be CS or SWE');
       } else {
-        readDatabase('database.csv').then((data) => {
+        readDatabase(process.argv[2] ? process.argv[2] : 'database.csv').then((data) => {
           const names = data[`${major}`];
-          const responseBody = `List: ${names}`;
+          const responseBody = `List: ${names}\n`;
           res.status(200).send(responseBody);
         });
+
       }
     } catch (error) {
       // If the database is not available, return a status 500 with an error message
