@@ -4,7 +4,7 @@ class StudentsController {
   static getAllStudents(req, res) {
     let resp = 'This is the list of our students\n';
     try {
-      readDatabase('database.csv')
+      readDatabase(process.argv[2] ? process.argv[2] : 'database.csv')
         .then((data) => {
           const csNames = data.CS.sort();
 
