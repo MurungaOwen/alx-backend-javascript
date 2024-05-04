@@ -33,7 +33,7 @@ function countStudents(path) {
     const msg3 = `Number of students in SWE: ${swTotal}. List: ${swArr}`;
     const final = `${msg1}${msg2}${msg3}`;
 
-    console.log(final);
+    process.stdout.write(final);
   } catch (error) {
     throw new Error('Cannot load the database');
   }
