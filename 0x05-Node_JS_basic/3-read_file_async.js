@@ -25,19 +25,10 @@ function countStudents(path) {
               swStud.push(val[0]);
             }
           });
-          const csArr = [];
-          csStud.forEach((val) => {
-            csArr.push(` ${val}`);
-          });
-
-          const swArr = [];
-          swStud.forEach((val) => {
-            swArr.push(` ${val}`);
-          });
 
           const msg1 = `Number of students: ${lines.length - 1}\n`;
-          const msg2 = `Number of students in CS: ${csTotal}. List: ${csArr}\n`;
-          const msg3 = `Number of students in SWE: ${swTotal}. List: ${swArr}`;
+          const msg2 = `Number of students in CS: ${csTotal}. List: ${csStud.join(', ')}\n`;
+          const msg3 = `Number of students in SWE: ${swTotal}. List: ${swStud.join(', ')}`;
           const final = `${msg1}${msg2}${msg3}`;
           process.stdout.write(`${final}\n`);
           resolve(final);
