@@ -8,7 +8,8 @@
       "check-lint": "lint [0-9]*.js",
       "test": "./node_modules/mocha/bin/mocha --require babel-register --exit",
       "dev": "nodemon --exec babel-node --presets babel-preset-env ./server.js ./database.csv",
-      "dev2": "nodemon --exec babel-node --presets babel-preset-env ./full_server/server.js ./database.csv"
+      "dev2": "nodemon --exec babel-node --presets babel-preset-env ./full_server/server.js ./database.csv",
+      "fix": "eslint --fix "
     },
     "author": "",
     "license": "ISC",
