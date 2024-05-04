@@ -9,17 +9,15 @@ function Home(req, res) {
   res.end('Hello Holberton School!');
 }
 
-function Students(req, res) {
+async function Students(req, res) {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.write('This is the list of our students\n');
-  try {
-    countStudents(process.argv[2], res).then((data) => {
-      res.end(data);
-    }).catch((err) => {
-      res.end(err);
-    });
-  } catch (err) {
-    res.end(err.message);
+  const filename = process.argv[2] ? process.argv[2] : 'database.csv';
+  const [data] = await Promise.allSettled([countStudents(filename)]);
+  if (data.value) {
+    res.end(data.value);
+  } else {
+    res.end('Cannot load the database');
   }
 }
 const app = http.createServer((req, res) => {
